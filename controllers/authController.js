@@ -4,6 +4,7 @@ let fs = require("fs");
 let dayjs = require("dayjs");
 let dayFormat = "DD/MM/YYYY";
 const jwt = require("jsonwebtoken");
+const mongoose = require("mongoose");
 let formidable = require("formidable");
 const { error } = require("console");
 const User = require("../models/User");
@@ -11,13 +12,13 @@ const bcrypt = require("bcrypt");
 const isLogin = require("../middleware/redirectifAuth");
 const authMiddleware = require("../middleware/authMiddleware");
 
-// mongoose.Promise = global.Promise;
-// mongoose
-//   .connect(
-//     "mongodb+srv://sahasawattee:Daw7lY3UGeHNP4kg@cluster0.ozsrvon.mongodb.net/?retryWrites=true&w=majority"
-//   )
-//   .then(() => console.log("connection sucessfully"))
-//   .catch((err) => console.error(err));
+mongoose.Promise = global.Promise;
+mongoose
+  .connect(
+    "mongodb+srv://sahasawattee:Daw7lY3UGeHNP4kg@cluster0.ozsrvon.mongodb.net/?retryWrites=true&w=majority"
+  )
+  .then(() => console.log("connection sucessfully"))
+  .catch((err) => console.error(err));
 
 router.get("/register", isLogin, function (req, res, next) {
   let data = req.flash("data")[0];
