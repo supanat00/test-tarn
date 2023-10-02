@@ -1,0 +1,588 @@
+<%- include('header') %>
+<div class="text-center h3 text-info mt-5">
+  <span class="material-symbols-outlined"> person </span>
+  Atlux168
+</div>
+<form action="/auth/register" enctype="multipart/form-data" method="post">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="card-title h3 material-icons">
+        <span class="material-symbols-outlined mt-1 mr-2"> person </span>
+        <span>รับงานตีราคา</span>
+      </div>
+        <div class="mt-3">Sale ที่ขอราคา ( ชื่อ-นามสกุล ที่ลงทะเบียน )</div>
+        <div>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="mt-3">Email Sale ที่ขอราคา ( Email ที่ลงทะเบียน )</div>
+        <div>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+          />
+        </div>
+        <div class="mt-3">วันที่ขอใบเสนอราคา</div>
+        <div>
+          <input
+            name="request_date"
+            type="date"
+            class="form-control"
+          />
+        </div>
+        <div class="mt-3">ส่งถึง Email สำหรับตีราคา</div>
+        <div>
+          <select
+            name="send_email"
+            id="email"
+            class="form-control"
+          >
+            <option selected disabled>E-mail ผู้ติดต่อ</option>
+            <option value="suppiler">vipawee@denfah.com</option>
+            <option value="freelance">kronkamon@denfah.com</option>
+            <option value="denfah_sale">Jane@denfah.com</option>
+            <option value="denfah_sale">preeyawanruch@denfah.com</option>
+          </select>
+        </div>
+        <div class="mt-3" for="pageSelect">เลือกประเภทกล่องสำหรับตีราคา</div>
+        <div>
+          <select
+            id="pageSelect"
+            name="box_type"
+            class="form-control"
+          >
+            <option value="none">เลือกประเภทกล่อง</option>
+            <option value="suppiler">กล่องออฟเซ็ท</option>
+            <option value="freelance">กล่องลูกฟูก</option>
+
+          </select>
+          <br>
+          <hr class="solid">
+
+          <!-- ---------------------กล่องออฟเซ็ท--------------------------->
+          <div class="card-title h3 material-icons">
+            <span class="material-symbols-outlined mt-1 mr-2"> person </span>
+            <h2 >งานตีราคาสำหรับ กล่องออฟเซ็ท</h2>
+          </div>
+            
+            <div class="mt-3">ชื่องาน</div>
+            <div>
+              <input
+                name="surname"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <div class="mt-3">ชื่อลูกค้า</div>
+            <div>
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+              />
+            </div>
+            <div class="mt-3">Size งานกางออก</div>
+            <p><small>หน่วยเป็น cm (กว้าง*ยาว) **กรณีงานต้องออกแบบ กรอกคำว่าออกแบบ ในช่องว่าง**</small></p>
+            <div>
+              <input
+                name="phone"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <div class="mt-3">Size ขึ้นรูปสำเร็จ</div>
+            <p><small>หน่วยเป็น cm (กว้าง*ยาว*สูง) **กรณีงานต้องออกแบบ กรอกคำว่าออกแบบ ในช่องว่าง**</small></p>
+            <div>
+              <input
+                name="identification_number"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <div class="mt-3">ลักษณะกล่อง</div>
+            <p><small>(ลักษณะรูปตัวอย่าง)</small></p>
+            <div>
+              <img src="/images/Box_design/Box_head_foot.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture1" name="Pictures"> <label for="picture1">กล่องเสียบหัวเสียบท้าย</label>
+            </div>
+            <div>
+              <img src="/images/Box_design/กล่อง auto lock.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture2" name="Pictures"> <label for="picture2">กล่อง auto lock</label>
+            </div>
+            <div>
+              <img src="/images/Box_design/กล่องขนมโดนัท ปะ 6 จุด.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture3" name="Pictures"> <label for="picture3">กล่องขนมโดนัท ปะ 6 จุด</label>
+            </div>
+            <div>
+              <img src="/images/Box_design/กล่องแบบสวม-พร้อมถาด หรือถาด.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture4" name="Pictures"> <label for="picture4">กล่องแบบสวม-พร้อมถาด หรือถาด</label>
+            </div>
+            <div>
+              <img src="/images/Box_design/กล่องก้นขัดไม่ปะกาว.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture5" name="Pictures"> <label for="picture5">กล่องก้นขัดไม่ปะกาว</label>
+            </div>
+            <div>
+              <img src="/images/Box_design/กล่องติดกาวฝาบนล่าง.jpg" width="150" height="100" alt="">
+              <input type="radio" id="picture6" name="Pictures"> <label for="picture6">กล่องติดกาวฝาบนล่าง</label>
+            </div>
+            <div>
+              <input type="radio" id="picture7" name="Pictures"> <label for="picture7">อื่นๆ</label>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" style="margin-bottom: 10px;">ชนิดกระดาษ</div>
+            <div>
+                <input type="checkbox" id="Paper1" name="" value="">
+                <label for="Paper1"> กล่องแป้งหลังเทา</label><br>
+                <input type="checkbox" id="Paper2" name="" value="">
+                <label for="Paper2"> กล่องแป้งหลังขาว</label><br>
+                <input type="checkbox" id="Paper3" name="" value="">
+                <label for="Paper3"> กล่องแป้งหลังน้ำตาล</label><br>
+                <input type="checkbox" id="Paper4" name="" value="">
+                <label for="Paper4"> กระดาษคราฟน้ำตาล</label><br>
+                <input type="checkbox" id="Paper5" name="" value="">
+                <label for="Paper5"> อาร์ตการ์ด 1 หน้า</label><br>
+                <input type="checkbox" id="Paper6" name="" value="">
+                <label for="Paper6"> กระดาษอาร์ตการ์ด 2 หน้า</label><br>
+                <input type="checkbox" id="Paper7" name="" value="">
+                <label for="Paper7"> กระดาษเคลือบฟอยล์</label><br>
+                <input type="checkbox" id="Paper8" name="" value="">
+                <label for="Paper8"> กระดาษอาร์ตมัน 1 หน้า</label><br>
+                <input type="checkbox" id="Paper9" name="" value="">
+                <label for="Paper9"> กระดาษอาร์ตมัน 2 หน้า</label><br>
+                <input type="checkbox" id="Paper10" name="" value="">
+                <label for="Paper10"> กระดาษอาร์ตด้าน 1 หน้า</label><br>
+                <input type="checkbox" id="Paper11" name="" value="">
+                <label for="Paper11"> กระดาษปอนด์</label><br>
+                <input type="checkbox" id="Paper12" name="" value="">
+                <label for="Paper12"> กล่องขาว(เทพพัฒนา)</label><br>
+                <input type="checkbox" id="Paper13" name="" value="">
+                <label for="Paper13"> สติกเกอร์กระดาษหลังกลาสซีน</label><br>
+                <input type="checkbox" id="Paper14" name="" value="">
+                <label for="Paper14"> สติกเกอร์กระดาษกึ่งเงากึ่งด้าน</label><br>
+                <input type="checkbox" id="Paper15" name="" value="">
+                <label for="Paper15"> กระดาษลูกฟูก</label><br>
+                <input type="checkbox" id="Paper16" name="" value="">
+                <label for="Paper16"> กระดาษทิชชู่</label><br>
+                <input type="checkbox" id="Paper17" name="" value="">
+                <label for="Paper17"> กระดาษ FSC</label><br>
+                <input type="checkbox" id="Paper18" name="" value="">
+                <label for="Paper18"> กระดาษสติ๊กเกอร์ PP ขาวด้าน</label><br>
+                <input type="checkbox" id="Paper19" name="" value="">
+                <label for="Paper19"> กระดาษปรู๊ฟ</label><br>
+                <input type="checkbox" id="Paper20" name="" value="">
+                <label for="Paper20"> กระดาษ KW</label><br>
+                <input type="checkbox" id="Paper21" name="" value="">
+                <label for="Paper21"> ปะลูกฟูก KW170/CA125/CA125-(ลอนE)</label><br>
+                ช่องกรอกฟอร์มอื่นๆ************
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" style="margin-bottom: 10px;">แกรมกระดาษ</div>
+            <div>
+                <input type="checkbox" id="checkbox1" name="" value="">
+                <label for="checkbox1"> 60 แกรม</label><br>
+                <input type="checkbox" id="checkbox2" name="" value="">
+                <label for="checkbox2"> 80 แกรม</label><br>
+                <input type="checkbox" id="checkbox3" name="" value="">
+                <label for="checkbox3"> 90 แกรม</label><br>
+                <input type="checkbox" id="checkbox4" name="" value="">
+                <label for="checkbox4"> 100 แกรม</label><br>
+                <input type="checkbox" id="checkbox5" name="" value="">
+                <label for="checkbox5"> 120 แกรม</label><br>
+                <input type="checkbox" id="checkbox6" name="" value="">
+                <label for="checkbox6"> 128 แกรม</label><br>
+                <input type="checkbox" id="checkbox7" name="" value="">
+                <label for="checkbox7"> 157 แกรม</label><br>
+                <input type="checkbox" id="checkbox8" name="" value="">
+                <label for="checkbox8"> 170 แกรม</label><br>
+                <input type="checkbox" id="checkbox9" name="" value="">
+                <label for="checkbox9"> 190 แกรม</label><br>
+                <input type="checkbox" id="checkbox10" name="" value="">
+                <label for="checkbox10"> 210 แกรม</label><br>
+                <input type="checkbox" id="checkbox11" name="" value="">
+                <label for="checkbox11"> 230 แกรม</label><br>
+                <input type="checkbox" id="checkbox12" name="" value="">
+                <label for="checkbox12"> 250 แกรม</label><br>
+                <input type="checkbox" id="checkbox13" name="" value="">
+                <label for="checkbox13"> 270 แกรม</label><br>
+                <input type="checkbox" id="checkbox14" name="" value="">
+                <label for="checkbox14"> 300 แกรม</label><br>
+                <input type="checkbox" id="checkbox15" name="" value="">
+                <label for="checkbox15"> 310 แกรม</label><br>
+                <input type="checkbox" id="checkbox16" name="" value="">
+                <label for="checkbox16"> 350 แกรม</label><br>
+                <input type="checkbox" id="checkbox17" name="" value="">
+                <label for="checkbox17"> 400 แกรม</label><br>
+                <input type="checkbox" id="checkbox18" name="" value="">
+                <label for="checkbox18"> 450 แกรม</label><br>
+                <input type="checkbox" id="checkbox19" name="" value="">
+                <label for="checkbox19"> ตามตัวอย่างแนบ</label><br>
+                <input type="checkbox" id="checkbox20" name="" value="">
+                <label for="checkbox20"> ตามน้ำหนักกระดาษ</label><br>
+                ช่องกรอกฟอร์มอื่นๆ************
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">ระบบพิมพ์</div>
+            <div>
+              <input type="radio" id="Print1" name="Print">
+              <label for="Print1">ระบบคอนแวน</label><br>
+              <input type="radio" id="Print2" name="Print">
+              <label for="Print2">ระบบยูวี</label>
+            </div>
+            <hr class="solid">
+            <div class="mt-3">จำนวนสีงานพิมพ์</div>
+            <p><small>(กรณีงานสีพิเศษระบุช่องถัดไป)</small></p>
+            <div>
+              <input type="radio" id="ColorP1" name="CMY">
+              <label for="ColorP1">4 สี CMYK</label><br>
+              <input type="radio" id="ColorP2" name="CMY">
+              <label for="ColorP2">5 สี CMYK +สีพิเศษ</label><br>
+              <input type="radio" id="ColorP3" name="CMY">
+              <label for="ColorP3">5 สี CMYK+ขาว</label><br>
+              <input type="radio" id="ColorP4" name="CMY">
+              <label for="ColorP4">ยึดตามตัวอย่างงาน</label>
+              <div class="mt-3">จำนวนสีงานพิมพ์สีพิเศษ********</div>
+            <p><small>จำนวนสีงานพิมพ์สีพิเศษ ระบุจำนวนสี และสีพิเศษ (ในกรณีไม่ได้เป็นสี CMYK) <span style="text-decoration: underline;">**กรณีงานพิมพ์ระบบ UV จะมีสีขาวเพิ่มมาอีก 1 สี</span></small></p>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" style="margin-bottom: 10px;">การเคลือบผิว (ด้านหน้ากล่อง)
+            </div>
+            <div>
+                <input type="checkbox" id="Fcoating1" name="" value="">
+                <label for="Fcoating1"> PVC เงา</label><br>
+                <input type="checkbox" id="Fcoating2" name="" value="">
+                <label for="Fcoating2"> PVC ด้าน</label><br>
+                <input type="checkbox" id="Fcoating3" name="" value="">
+                <label for="Fcoating3"> เคลือบ UV เงา</label><br>
+                <input type="checkbox" id="Fcoating4" name="" value="">
+                <label for="Fcoating4"> ขัดเงา</label><br>
+                <input type="checkbox" id="Fcoating5" name="" value="">
+                <label for="Fcoating5"> ขัดเงาเว้น lot</label><br>
+                <input type="checkbox" id="Fcoating6" name="" value="">
+                <label for="Fcoating6"> Spot uv</label><br>
+                <input type="checkbox" id="Fcoating7" name="" value="">
+                <label for="Fcoating7"> อาบเงา</label><br>
+                <input type="checkbox" id="Fcoating8" name="" value="">
+                <label for="Fcoating8"> อาบด้าน</label><br>
+                <input type="checkbox" id="Fcoating9" name="" value="">
+                <label for="Fcoating9"> waterbase เงา</label><br>
+                <input type="checkbox" id="Fcoating10" name="" value="">
+                <label for="Fcoating10"> waterbase ด้าน</label><br>
+                <input type="checkbox" id="Fcoating11" name="" value="">
+                <label for="Fcoating11"> ดริฟออฟ</label><br>
+                <input type="checkbox" id="Fcoating12" name="" value="">
+                <label for="Fcoating12"> waterbase กึ่งเงากึ่งด้าน</label><br>
+                <input type="checkbox" id="Fcoating13" name="" value="">
+                <label for="Fcoating13"> ไม่เคลือบ</label><br>
+            </div>
+            <hr class="solid">
+            <div class="mt-3" style="margin-bottom: 10px;">การเคลือบผิว (ด้านหลังกล่อง)</div>
+            <div>
+                <input type="checkbox" id="coating1" name="" value="">
+                <label for="coating1"> PVC เงา</label><br>
+                <input type="checkbox" id="coating2" name="" value="">
+                <label for="coating2"> PVC ด้าน</label><br>
+                <input type="checkbox" id="coating3" name="" value="">
+                <label for="coating3"> อาบเงา</label><br>
+                <input type="checkbox" id="coating4" name="" value="">
+                <label for="coating4"> waterbase เงา</label><br>
+                <input type="checkbox" id="coating5" name="" value="">
+                <label for="coating5"> waterbase ด้าน</label><br>
+                <input type="checkbox" id="coating7" name="" value="">
+                <label for="coating7"> อาบด้าน</label><br> 
+                <input type="checkbox" id="coating6" name="" value="">
+                <label for="coating6"> ไม่เคลือบ</label><br>
+                          
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" style="margin-bottom: 10px;">การปั๊ม</div>
+            <div>
+                <input type="checkbox" id="Stamping1" name="" value="">
+                <label for="Stamping1"> ปั๊มนูน</label><br>
+                <input type="checkbox" id="Stamping2" name="" value="">
+                <label for="Stamping2"> ปั๊มจม</label><br>
+                <input type="checkbox" id="Stamping3" name="" value="">
+                <label for="Stamping3"> ปั๊มเค</label><br>
+                <input type="checkbox" id="Stamping4" name="" value="">
+                <label for="Stamping4"> ปั๊มไดคัท</label><br>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">การปะกาว</div>
+            <div>
+                <input type="checkbox" id="glue1" name="" value="">
+                <label for="glue1"> ปะข้าง 1 จุด</label><br>
+                <input type="checkbox" id="glue2" name="" value="">
+                <label for="glue2"> ปะ 2 จุด</label><br>
+                <input type="checkbox" id="glue3" name="" value="">
+                <label for="glue3"> ปะ 3 จุด</label><br>
+                <input type="checkbox" id="glue4" name="" value="">
+                <label for="glue4"> ปะ 4 จุด</label><br>
+                <input type="checkbox" id="glue5" name="" value="">
+                <label for="glue5"> ปะ 5 จุด</label><br>
+                <input type="checkbox" id="glue6" name="" value="">
+                <label for="glue6"> ปะ 6 จุด</label><br>
+                <input type="checkbox" id="glue7" 7name="" value="">
+                <label for="glue7"> ไม่ปะกาว</label><br>
+                <input type="checkbox" id="glue8" name="" value="">
+                <label for="glue8"> ร้อยเชือกหัวแผง สีขาว 4 mm</label><br>
+                <input type="checkbox" id="glue9" name="" value="">
+                <label for="glue9"> ปะหน้่าต่าง PVC 0.10 mm</label><br>
+                <div class="mt-3">รายละเอียดเพิ่มเติม</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">จำนวนที่สั่งผลิต</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" >รายการที่ขอ</div>
+            <div>
+              <input type="radio" id="order1" name="OrderS">
+              <label for="order1">ขอใบเสนอราคา</label><br>
+              <input type="radio" id="order2" name="OrderS">
+              <label for="order2">ขอใบเสนอราคา-ขอตัวอย่าง Mock up</label><br>
+              <input type="radio" id="order3" name="OrderS">
+              <label for="order3">ขอใบเสนอราคา/ขอตัวอย่าง Mock up พร้อม AW</label><br>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">
+              <label>แนบรูปภาพ,ไฟล์ ตัวอย่างงานสำหรับเสนอราคา</label><br>
+              <input type="file" name="card_number"  />
+            </div>
+            <hr class="solid">
+            <!-- ---------------------กล่องลูกฟูก--------------------------->
+          <div class="card-title h3 material-icons">
+            <span class="material-symbols-outlined mt-1 mr-2"> person </span>
+            <span>งานตีราคาสำหรับ กล่องลูกฟูก</span>
+          </div>
+            
+            <div class="mt-3">ชื่องาน</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+    
+            <div class="mt-3">ชื่อลูกค้า</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+    
+            <div class="mt-3">Size งานกางออก</div>
+            <p><small>หน่วยเป็น cm (กว้าง*ยาว) **กรณีงานต้องออกแบบ กรอกคำว่าออกแบบ ในช่องว่าง**</small></p>
+            <div>
+              <input
+                name="phone"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <div class="mt-3">Size ขึ้นรูปสำเร็จ</div>
+            <p><small>หน่วยเป็น cm (กว้าง*ยาว*สูง) **กรณีงานต้องออกแบบ กรอกคำว่าออกแบบ ในช่องว่าง**</small></p>
+            <div>
+              <input
+                name="identification_number"
+                type="text"
+                class="form-control"
+              />
+            </div>
+    
+            <div class="mt-3">จำนวนสีงานพิมพ์</div>
+            <div>
+              <input type="radio" id="sec1" name="Colors">
+              <label for="sec1">1 สี</label><br>
+              <input type="radio" id="sec2" name="Colors">
+              <label for="sec2">2 สี</label><br>
+              <input type="radio" id="sec3" name="Colors">
+              <label for="sec3">3 สี</label><br>
+              <input type="radio" id="sec4" name="Colors">
+              <label for="sec4">4 สี</label><br>
+              <input type="radio" id="sec5" name="Colors">
+              <label for="sec5">ยึดตามตัวอย่างงาน</label>
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">ชนิดกระดาษ</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3" >จำนวนชั้นของลูกฟูก</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3" >การปะขึ้นรูป</div>
+            <div class="">
+                <input type="checkbox" id="glue-dot3" name="" value="">
+                <label for="glue-dot3"> ปะด้วยกาว</label><br>
+                <input type="checkbox" id="glue-dot4" name="" value="">
+                <label for="glue-dot4"> ปะกาวด้วยแม็กซ์</label><br>
+                <input type="checkbox" id="glue-max1" name="" value="">
+                <label for="glue-max1"> ไม่ปะ</label><br>
+
+               
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">จำนวนที่สั่งผลิต</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3" >รายการที่ขอ</div>
+            <div>
+              <input type="radio" id="order1F" name="OrderS">
+              <label for="order1F">ขอใบเสนอราคา</label><br>
+              <input type="radio" id="order2F" name="OrderS">
+              <label for="order2F">ขอใบเสนอราคา-ขอตัวอย่าง Mock up</label><br>
+              <input type="radio" id="order3F" name="OrderS">
+              <label for="order3F">ขอใบเสนอราคา/ขอตัวอย่าง Mock up พร้อม AW</label><br>
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">
+              <label>แนบรูป1</label><br>
+              <input type="file" name="card_number"  />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3" >ข้อมูลการสั่งซื้อและชำระเงิน</div>
+            <div class="mt-3">ชื่อผู้ติดต่อ</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <hr class="solid">
+    
+            <div class="mt-3">เบอร์โทร</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">ที่อยู่สำหรับระบุในใบเสนอราคา</div>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"
+              />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">ที่อยู่ในการจัดส่ง</div>
+            <p><small>สถานที่ส่งกรุงเทพฯส่งฟรี (ปริมณฑลและต่างจังหวัดมีค่าใช้จ่ายตามระยะทางขนส่ง)</small></p>
+            <div>
+              <input
+                name="username"
+                type="text"
+                class="form-control"          
+              />
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">ลักษณะการแพ็คสินค้าส่ง</div>
+            <div>
+              <input type="radio" id="B-detail1" name="Packing">
+              <label for="B-detail1">ห่อกระดาษ</label><br>
+              <input type="radio" id="B-detail2" name="Packing">
+              <label for="B-detail2">ใส่ลังลูกฟูก</label><br>
+              <input type="radio" id="B-detail3" name="Packing">
+              <label for="B-detail3">ใส่พาเลท</label><br>
+              <input type="radio" id="B-detail4" name="Packing">
+              <label for="B-detail4">ใส่กรง</label><br>
+              <input type="radio" id="B-detail5" name="Packing">
+              <label for="B-detail5">ใส่ลังพลาสติก</label><br>
+              <input type="radio" id="B-detail5" name="Packing">
+              <label for="B-detail5">ไม่ห่อ</label>
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">เครดิตในการชำระเงิน</div>
+            <div>
+              <input type="radio" id="pay1" name="Packing">
+              <label for="pay1">เงินสด</label><br>
+              <input type="radio" id="pay2" name="Packing">
+              <label for="pay2">7 วัน</label><br>
+              <input type="radio" id="pay3" name="Packing">
+              <label for="pay3">14 วัน</label><br>
+              <input type="radio" id="pay4" name="Packing">
+              <label for="pay4">30 วัน</label><br>
+              <input type="radio" id="pay5" name="Packing">
+              <label for="pay5">60 วัน</label><br>
+              
+            </div>
+            <hr class="solid">
+
+            <div class="mt-3">
+              <button type="submit" class="btn btn-info">Sign Up</button>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- <%- include('offset-component') %>
+    <%- include('lookfook') %> -->
+</form>
+
+<%- include('footer') %>
+

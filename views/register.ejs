@@ -1,0 +1,204 @@
+<%- include('header') %>
+<div class="text-center h3 text-info mt-5">
+  <span class="material-symbols-outlined"> person </span>
+  Atlux168
+</div>
+<form action="/auth/register" enctype="multipart/form-data" method="post">
+  <div class="card mt-3">
+    <div class="card-body">
+      <div class="card-title h3 material-icons">
+        <span class="material-symbols-outlined mt-1 mr-2"> person </span>
+        <span>Sign Up</span>
+      </div>
+      <div>
+        <% if(errors != null && errors.length > 0) { %> <% for(let i = 0; i <
+        errors.length; i++) { %>
+        <div>
+          <p class="alert alert-danger"><%= errors[i] %></p>
+        </div>
+        <% }%> <% } %>
+        <div class="mt-3">Username</div>
+        <div>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+            value="<%= username %>"
+          />
+        </div>
+        <div class="mt-3">Password</div>
+        <div>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            value="<%= password %>"
+          />
+        </div>
+        <div class="mt-3">Confirm Password</div>
+        <div>
+          <input
+            name="confirm_password"
+            type="password"
+            class="form-control"
+            value="<%= confirm_password %>"
+          />
+        </div>
+        <div class="mt-3">Role</div>
+        <div>
+          <select
+            name="role"
+            id="role"
+            onchange="checkRole()"
+            class="form-control"
+          >
+            <option value="">Select Your Role</option>
+            <option value="suppiler">Suppiler</option>
+            <option value="freelance">Freelance</option>
+            <option value="denfah_sale">Denfah Sale</option>
+          </select>
+        </div>
+        <div id="company_div" hidden="true">
+          <div class="mt-3">Company Name</div>
+          <div>
+            <input
+              name="company_name"
+              id="company_name"
+              type="text"
+              class="form-control"
+              value="<%= company_name %>"
+            />
+          </div>
+        </div>
+        <div class="mt-3">Name</div>
+        <div>
+          <input
+            name="name"
+            type="text"
+            class="form-control"
+            value="<%= name %>"
+          />
+        </div>
+        <div class="mt-3">Surname</div>
+        <div>
+          <input
+            name="surname"
+            type="text"
+            class="form-control"
+            value="<%= surname %>"
+          />
+        </div>
+        <div class="mt-3">Email</div>
+        <div>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            value="<%= email %>"
+          />
+        </div>
+        <div class="mt-3">Phone</div>
+        <div>
+          <input
+            name="phone"
+            type="text"
+            class="form-control"
+            value="<%= phone %>"
+          />
+        </div>
+        <div class="mt-3">Identification Number</div>
+        <div>
+          <input
+            name="identification_number"
+            type="text"
+            class="form-control"
+            value="<%= identification_number %>"
+          />
+        </div>
+        <div class="mt-3">Line ID</div>
+        <div>
+          <input
+            name="line_id"
+            type="text"
+            class="form-control"
+            value="<%= line_id %>"
+          />
+        </div>
+        <div class="mt-3">Address</div>
+        <div>
+          <input
+            name="address"
+            type="text"
+            class="form-control"
+            value="<%= address %>"
+          />
+        </div>
+        <div class="mt-3">District</div>
+        <div>
+          <input
+            name="district"
+            type="text"
+            class="form-control"
+            value="<%= district %>"
+          />
+        </div>
+        <div class="mt-3">Subdistrict</div>
+        <div>
+          <input
+            name="subdistrict"
+            type="text"
+            class="form-control"
+            value="<%= subdistrict %>"
+          />
+        </div>
+        <div class="mt-3">Province</div>
+        <div>
+          <input
+            name="province"
+            type="text"
+            class="form-control"
+            value="<%= province %>"
+          />
+        </div>
+        <div class="mt-3">Postal code</div>
+        <div>
+          <input
+            name="postal_code"
+            type="text"
+            class="form-control"
+            value="<%= postal_code %>"
+          />
+        </div>
+        <div class="mt-3">
+          <label id="title_card_number" for="card_number">สําเนาบัตรประชาชน</label>
+          <input id="change_name" type="file" name="card_number" class="form-control-file" />
+        </div>
+        <div class="mt-3">
+          <label>หน้าสมุดบัญชี</label>
+          <input type="file" name="bank_number" class="form-control-file" />
+        </div>
+        <div class="mt-3">
+          <button type="submit" class="btn btn-info">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script>
+  function checkRole() {
+    const role = document.getElementById("role").value;
+    const company_div = document.getElementById("company_div");
+    const title_card_number = document.getElementById('title_card_number')
+    const change_name = document.getElementById('change_name')
+    if (role === "suppiler") {
+      company_div.hidden = false;
+      title_card_number.innerHTML = 'กพ.20';
+      change_name.setAttribute("name","company_file");
+    } else {
+      company_div.hidden = true;
+      title_card_number.innerHTML = 'สําเนาบัตรประชาชน';
+      change_name.setAttribute("name","card_number");
+    }
+  }
+</script>
+<%- include('footer') %>
